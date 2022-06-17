@@ -1,0 +1,75 @@
+// hero links (not <button>)
+.button {
+  @include centeredFlex(inline-flex);
+  @include fontRegular(null, 8px, 400, 10px, #ffffff, null);
+  height: 24px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 0;
+  padding-top: 0;
+  border-radius: 20px;
+  background-color: $heroButtonDarkPink;
+  @include btnAnimation($customer_reviews_pagination, 20px);
+  &--white {
+    background-color: $heroButtonWhite;
+    color: $heroButtonWhiteTx;
+    @include btnAnimation($heroBtnHover, 22px);
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $btn-hover-bck;
+    color: $accent-color;
+  }
+
+  &--white:hover,
+  &--white:focus {
+    background-color: $heroBtnHover;
+    color: $primary-text-color;
+  }
+
+  // desktop
+  @media screen and (min-width: 1279.98px) {
+    height: 40px;
+    @include fontRegular(null, 14px, 400, 18px, null, null);
+  }
+}
+
+// button with pink arrow default style
+
+.button-arrow {
+  @include centeredFlex(flex);
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  fill: $heroButtonDarkPink;
+  background-color: #ffffff;
+  @include transition(background-color);
+
+  &:hover,
+  &:focus {
+    background-color: $btn-hover-bck;
+  }
+
+  &--hero {
+    width: 18px;
+    height: 18px;
+
+    // desktop
+    @media screen and (min-width: 1279.98px) {
+      width: 26px;
+      height: 26px;
+    }
+  }
+
+  &__hero-svg {
+    width: 6px;
+    height: 6px;
+
+    // desktop
+    @media screen and (min-width: 1279.98px) {
+      width: 10px;
+      height: 10px;
+    }
+  }
+}
